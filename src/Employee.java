@@ -1,24 +1,66 @@
 public class Employee {
-    String [] Employee = new String[15];
-    public static void worker ()  {
-        "Туров", "Мартин", "Никитевич" 97400, 1;
-        "Меркушев", "Валентин", "Андреевич", 54011, 1;
-        "Григорьев", "Георгий", "Ростиславович", 68120, 1;
-        "Костина", "Валерия", "Тимофеевна", 45160, 2;
-        "Шубина", "Амина", "Богдановна", 64200, 2;
-        "Воробьев", "Владислав", "Викторович", 105012, 2;
-        "Иванова", "Валерия", "Елисеевна", 74650, 3;
-        "Булгакова", "Ксения", "Львовна", 86540, 3;
-        "Воронцова", "Анна", "Артемьевна", 46300, 3;
-        "Гришин", "Фёдор", "Тимофеевич", 54852, 4;
-        "Семенова", "Варвара", "Александровна", 35040, 4;
-        "Юдин", "Денис", "Кириллович", 54826, 4;
-        "Беляева", "Полина", "Марковна", 65923, 5;
-        "Лобанова", "София", "Ивановна", 93234, 5;
-        "Павлов", "Лев", "Алексеевич", 45356, 5;
+    private String surname;
+    private String name;
+    private String patronymic;
+    private Integer salary;
+    private Integer department;
+    private static int counter = 0;
+    private Integer id;
 
+       public Employee (String surname, String name, String patronymic, Integer salary, Integer department) {
+            this.surname = surname;
+            this.name = name;
+            this.patronymic = patronymic;
+            this.salary = salary;
+            this.department = department;
+            this.id = counter+1;
+        }
+        public String getSurname() {
+            return surname;
+        }
 
+        public String getName() {
+            return name;
+        }
 
+        public String getPatronymic() {
+            return patronymic;
+        }
+
+        public int getSalary() {
+            return salary;
+        }
+
+        public int getDepartment() {
+            return department;
+        }
+
+        public static int getCounter() {
+            return counter;
+        }
+
+        public void setSalary(int salary) {
+            this.salary = salary;
+        }
+
+        public void setDepartment(int department) {
+            this.department = department;
+        }
+
+    public Integer getId() {
+        return id;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", salary=" + salary +
+                ", department=" + department +
+                '}';
+    }
 }
+
+
