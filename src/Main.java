@@ -20,21 +20,21 @@ public class Main {
         Employee no14 = new Employee("Лобанова", "София", "Ивановна", 93234, 5);
         Employee no15 = new Employee("Павлов", "Лев", "Алексеевич", 45356, 5);
 
-        workers [0] = no1;
-        workers [1] = no2;
-        workers [2] = no3;
-        workers [3] = no4;
-        workers [4] = no5;
-        workers [5] = no6;
-        workers [6] = no7;
-        workers [7] = no8;
-        workers [8] = no9;
-        workers [9] = no10;
-        workers [10] = no11;
-        workers [11] = no12;
-        workers [12] = no13;
-        workers [13] = no14;
-        workers [14] = no15;
+        workers[0] = no1;
+        workers[1] = no2;
+        workers[2] = no3;
+        workers[3] = no4;
+        workers[4] = no5;
+        workers[5] = no6;
+        workers[6] = no7;
+        workers[7] = no8;
+        workers[8] = no9;
+        workers[9] = no10;
+        workers[10] = no11;
+        workers[11] = no12;
+        workers[12] = no13;
+        workers[13] = no14;
+        workers[14] = no15;
     }
 
     public static void employeeSeal() {
@@ -42,6 +42,7 @@ public class Main {
             System.out.println(employee);
         }
     }
+
     public static int salaryCostsRorAllEmployees() {
         int salaryTotal = 0;
         for (Employee employee : workers) {
@@ -49,6 +50,7 @@ public class Main {
         }
         return salaryTotal;
     }
+
     public static Employee minimumWage() {
         Employee results = workers[0];
         int min = workers[0].getSalary();
@@ -60,21 +62,30 @@ public class Main {
         }
         return results;
     }
-        public static Employee maximumWage() {
-            Employee result = workers[0];
-            int max = workers[0].getSalary();
-            for (Employee employee : workers) {
-                if (max > workers[0].getSalary()) {
-                    max = workers[0].getSalary();
-                    result = employee;
-                }
-            }
-            return result;
-        }
-    public static double averageSalaryValue() {
-       return salaryCostsRorAllEmployees()/(double) workers.length;
-    }
-    }
 
+    public static Employee maximumWage() {
+        Employee result = workers[0];
+        int max = workers[0].getSalary();
+        for (Employee employee : workers) {
+            if (max > workers[0].getSalary()) {
+                max = workers[0].getSalary();
+                result = employee;
+            }
+        }
+        return result;
+    }
+    public static int averageSalaryValue() {
+        int counter1 = 0;
+        int salaryTotal1 = 0;
+        for (Employee employee : workers) {
+            if (employee != null) {
+                counter1++;
+                salaryTotal1 += employee.getSalary();
+            }
+
+        }
+        return salaryTotal1;
+    }
+}
 
 
